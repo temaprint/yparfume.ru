@@ -1,0 +1,80 @@
+---
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Блог о парфюмерии - как отличить оригинал от подделки" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="hover:opacity-80 transition-opacity">
+          <Logo />
+        </a>
+        <div class="flex gap-8">
+          <a href="/blog" class="text-gray-700 hover:text-gray-900 font-medium">Как отличить подделку?</a>
+          <a href="/business" class="text-gray-700 hover:text-gray-900 font-medium">Для бизнеса</a>
+          <a href="/about" class="text-gray-700 hover:text-gray-900 font-medium">Обо мне</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="bg-gray-50 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
+        <hr>
+        <br />
+        © 2025 Yparfume.ru.
+        <p>Оригинальные духи на распив.</p>
+        <p>Отливаю из личных закромов. Купить с доставкой по РФ.</p>
+        <p>Гарантия подлинности и милые подарочки к каждому заказу!</p>
+      </div>
+      <!-- Yandex.Metrika counter -->
+      <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(64480750, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+        });
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/64480750" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <!-- /Yandex.Metrika counter -->
+    </footer>
+  </body>
+</html>
+
+<style>
+  html {
+    font-family: 'Roboto', system-ui, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+  }
+</style>

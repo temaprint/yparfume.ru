@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const packages = [
+  {
+    title: "Старт-пакет «Люкс»",
+    image: "/pack1.jpg",
+    description: "Премиальные ароматы известных брендов"
+  },
+  {
+    title: "Старт-пакет «Нишевый»",
+    image: "/pack2.jpg",
+    description: "Эксклюзивные нишевые ароматы"
+  },
+  {
+    title: "Старт-пакет «Масс-маркет»",
+    image: "/pack3.jpg",
+    description: "Популярные ароматы по доступной цене"
+  },
+  {
+    title: "Старт-пакет «Конструктор»",
+    image: "/pack4.jpg",
+    description: "Индивидуальный набор ароматов на ваш выбор"
+  }
+];
+---
+
+<Layout 
+  title="Для бизнеса - Yparfume.ru"
+  description="Начните свой парфюмерный бизнес с нашими стартовыми пакетами"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-6">
+        Для бизнеса
+      </h1>
+      <p class="text-xl text-gray-700 mb-8">
+        Начните свой парфюмерный бизнес с профессиональной поддержкой
+      </p>
+    </div>
+
+    <div class="prose prose-lg max-w-4xl mx-auto mb-16">
+      <h2>Как увеличить свой чек без привлечения новых клиентов?</h2>
+      
+      <p>Очень просто. У вас уже есть своя база клиентов и постоянных покупателей.
+      А с них можно получить еще дополнительный доход (от +500₽ к чеку).</p>
+      
+      <h3>Что нужно делать?</h3>
+      <p>Добавить в свой арсенал парфюм! А именно распив парфюма.
+      Из оригинальных флаконов делать отливанты маленьких объемов 2/5/10 мл.</p>
+      
+      <h3>Почему это выгодно?</h3>
+      <ul>
+        <li>Девушки любят духи, и почему бы вместе с основной услугой не унести с собой маленький флакончик духов?</li>
+        <li>Духи заканчиваются, поэтому за новой "радостью" клиентка снова придет к вам</li>
+        <li>Духи не портятся и не занимают много места</li>
+        <li>Продавать флакон в распив выгодно - с 1 флакона можно получить от 35 до 50% прибыли</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Что входит в стартовый пакет?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              5 оригинальных ароматов
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Атомайзеры разных объемов
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Шприцы для распива
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Мешочки из органзы
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Видео-инструкция
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Продающие описания ароматов
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Калькулятор расчета стоимости
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-500 mr-2">✓</span>
+              Поддержка и консультации
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Наши стартовые пакеты</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {packages.map(pkg => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+          <img 
+            src={pkg.image} 
+            alt={pkg.title}
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{pkg.title}</h3>
+            <p class="text-gray-600">{pkg.description}</p>
+            <a 
+              href="https://t.me/deadangy" 
+              class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+            >
+              Узнать подробнее
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-gray-600 mb-6">
+        Можно сделать недорогой набор лучших ароматов из любого бренда, например Mancera, Montale, Attar Collection
+      </p>
+      <a 
+        href="https://t.me/deadangy" 
+        class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+      >
+        Связаться для консультации
+      </a>
+    </div>
+  </div>
+</Layout>

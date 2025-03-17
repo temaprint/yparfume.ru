@@ -1,0 +1,37 @@
+---
+interface Props {
+  post: {
+    name: string;
+    slug: string;
+    url_img: string;
+    order: number;
+    tags: string[];
+  };
+}
+
+const { post } = Astro.props;
+---
+
+<article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+  <a href={`/blog/${post.slug}`} class="block">
+    <img 
+      src={post.url_img} 
+      alt={post.name}
+      class="w-full h-48 object-cover"
+      loading="lazy"
+    />
+    <div class="p-4">
+      <h2 class="text-xl font-semibold text-gray-900 mb-2">{post.name}</h2>
+      <div class="flex flex-wrap gap-2">
+        {post.tags.map(tag => (
+          <a 
+            href={`/tag/${tag}`}
+            class="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+    </div>
+  </a>
+</article>

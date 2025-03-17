@@ -1,0 +1,17 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`flex items-center ${className}`}>
+  <img 
+    src="https://yparfume.ru/wp-content/uploads/2020/05/logo_yparfum_full_00.png"
+    alt="Yparfume.ru"
+    class="h-10 w-auto"
+    width="200"
+    height="40"
+  />
+</div>
